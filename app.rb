@@ -54,6 +54,12 @@ class PullRequestPreview
       message = "I've updated DATASOURCE on master"
       github.add_comment(viewer_sinatra_repo, viewer_sinatra_pull_request.number, message)
       github.close_pull_request(viewer_sinatra_repo, viewer_sinatra_pull_request.number)
+    when 'pull_request_closed'
+      viewer_sinatra_pull_request = find_or_create_pull_request(pull_request_title)
+      message = "The parallel Pull Request in everypolitician-data was closed" \
+        "with unmerged commits."
+      github.add_comment(viewer_sinatra_repo, viewer_sinatra_pull_request.number, message)
+      github.close_pull_request(viewer_sinatra_repo, viewer_sinatra_pull_request.number)
     end
   end
 
