@@ -46,7 +46,7 @@ class PullRequestPreview
       github.update_contents(
         viewer_sinatra_repo,
         'DATASOURCE',
-        'Update DATASOURCE',
+        "Update DATASOURCE\n\n##{pull_request_number}",
         datasource.sha,
         countries_json_url
       )
