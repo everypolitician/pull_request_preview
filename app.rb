@@ -43,14 +43,14 @@ class PullRequestPreview
       find_or_create_pull_request(pull_request_title)
     when 'pull_request_merged'
       datasource = github.contents(viewer_sinatra_repo, path: 'DATASOURCE')
+      viewer_sinatra_pull_request = find_or_create_pull_request(pull_request_title)
       github.update_contents(
         viewer_sinatra_repo,
         'DATASOURCE',
-        "Update DATASOURCE\n\n##{pull_request_number}",
+        "Update DATASOURCE\n\n#{everypolitician_data_pull_request.html_url}\n#{viewer_sinatra_pull_request.html_url}",
         datasource.sha,
         countries_json_url
       )
-      viewer_sinatra_pull_request = find_or_create_pull_request(pull_request_title)
       message = "I've updated DATASOURCE on master"
       github.add_comment(viewer_sinatra_repo, viewer_sinatra_pull_request.number, message)
       github.close_pull_request(viewer_sinatra_repo, viewer_sinatra_pull_request.number)
