@@ -1,5 +1,6 @@
 require 'github'
 
+# Wrapper around everypolitician-data pull request that we want to preview.
 class EverypoliticianDataPullRequest
   include Github
 
@@ -38,6 +39,9 @@ class EverypoliticianDataPullRequest
   end
 
   def everypolitician_data_repo
-    @everypolitician_data_repo ||= ENV.fetch('EVERYPOLITICIAN_DATA_REPO', 'everypolitician/everypolitician-data')
+    @everypolitician_data_repo ||= ENV.fetch(
+      'EVERYPOLITICIAN_DATA_REPO',
+      'everypolitician/everypolitician-data'
+    )
   end
 end

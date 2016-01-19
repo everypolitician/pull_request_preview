@@ -1,5 +1,6 @@
 require 'github'
 
+# Handles creating and updating viewer-sinatra preview pull requests.
 class ViewerSinatra
   include Github
 
@@ -32,13 +33,21 @@ class ViewerSinatra
     github.update_contents(
       viewer_sinatra_repo,
       'DATASOURCE',
-      "Update DATASOURCE\n\n#{everypolitician_data_pull_request.html_url}\n#{viewer_sinatra_pull_request[:html_url]}",
+      "Update DATASOURCE\n\n#{everypolitician_data_pull_request.html_url}\n" \
+        "#{viewer_sinatra_pull_request[:html_url]}",
       datasource[:sha],
       countries_json_url
     )
     message = "I've updated DATASOURCE on master"
-    github.add_comment(viewer_sinatra_repo, viewer_sinatra_pull_request[:number], message)
-    github.close_pull_request(viewer_sinatra_repo, viewer_sinatra_pull_request[:number])
+    github.add_comment(
+      viewer_sinatra_repo,
+      viewer_sinatra_pull_request[:number],
+      message
+    )
+    github.close_pull_request(
+      viewer_sinatra_repo,
+      viewer_sinatra_pull_request[:number]
+    )
   end
 
   def on_closed
@@ -59,7 +68,11 @@ class ViewerSinatra
       fail Octokit::NotFound if ref.is_a?(Array)
       ref
     rescue Octokit::NotFound
-      github.create_ref(viewer_sinatra_repo, "heads/#{branch_name}", github.branch(viewer_sinatra_repo, 'master').commit.sha)
+      github.create_ref(
+        viewer_sinatra_repo,
+        "heads/#{branch_name}",
+        github.branch(viewer_sinatra_repo, 'master').commit.sha
+      )
     end
   end
 
@@ -99,6 +112,9 @@ class ViewerSinatra
   end
 
   def viewer_sinatra_repo
-    @viewer_sinatra_repo ||= ENV.fetch('VIEWER_SINATRA_REPO', 'everypolitician/viewer-sinatra')
+    @viewer_sinatra_repo ||= ENV.fetch(
+      'VIEWER_SINATRA_REPO',
+      'everypolitician/viewer-sinatra'
+    )
   end
 end
