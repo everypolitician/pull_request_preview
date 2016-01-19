@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/repos/chrismytton/everypolitician-data/pulls/1/commits
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.2.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token <GITHUB_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Tue, 19 Jan 2016 16:48:32 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4931'
+      X-Ratelimit-Reset:
+      - '1453223246'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Last-Modified:
+      - Tue, 19 Jan 2016 16:13:18 GMT
+      Etag:
+      - W/"01c014d903f5da07207da6757c08821e"
+      X-Oauth-Scopes:
+      - gist, repo, user
+      X-Accepted-Oauth-Scopes:
+      - ''
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - 139317cebd6caf9cd03889139437f00b
+      X-Github-Request-Id:
+      - 5225EB87:12182:F4629F0:569E68E0
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"sha":"3c3c7c1fc8a30735934a25fbf77876ceb5a35256","commit":{"author":{"name":"everypoliticianbot","email":"chrism+everypoliticianbot@mysociety.org","date":"2016-01-19T14:48:59Z"},"committer":{"name":"everypoliticianbot","email":"chrism+everypoliticianbot@mysociety.org","date":"2016-01-19T14:48:59Z"},"message":"Faroe
+        Islands: Refresh from upstream changes","tree":{"sha":"bcc53d2fa98a7f881d891fdf997f6352442130e7","url":"https://api.github.com/repos/chrismytton/everypolitician-data/git/trees/bcc53d2fa98a7f881d891fdf997f6352442130e7"},"url":"https://api.github.com/repos/chrismytton/everypolitician-data/git/commits/3c3c7c1fc8a30735934a25fbf77876ceb5a35256","comment_count":0},"url":"https://api.github.com/repos/chrismytton/everypolitician-data/commits/3c3c7c1fc8a30735934a25fbf77876ceb5a35256","html_url":"https://github.com/chrismytton/everypolitician-data/commit/3c3c7c1fc8a30735934a25fbf77876ceb5a35256","comments_url":"https://api.github.com/repos/chrismytton/everypolitician-data/commits/3c3c7c1fc8a30735934a25fbf77876ceb5a35256/comments","author":{"login":"everypoliticianbot","id":12693984,"avatar_url":"https://avatars.githubusercontent.com/u/12693984?v=3","gravatar_id":"","url":"https://api.github.com/users/everypoliticianbot","html_url":"https://github.com/everypoliticianbot","followers_url":"https://api.github.com/users/everypoliticianbot/followers","following_url":"https://api.github.com/users/everypoliticianbot/following{/other_user}","gists_url":"https://api.github.com/users/everypoliticianbot/gists{/gist_id}","starred_url":"https://api.github.com/users/everypoliticianbot/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/everypoliticianbot/subscriptions","organizations_url":"https://api.github.com/users/everypoliticianbot/orgs","repos_url":"https://api.github.com/users/everypoliticianbot/repos","events_url":"https://api.github.com/users/everypoliticianbot/events{/privacy}","received_events_url":"https://api.github.com/users/everypoliticianbot/received_events","type":"User","site_admin":false},"committer":{"login":"everypoliticianbot","id":12693984,"avatar_url":"https://avatars.githubusercontent.com/u/12693984?v=3","gravatar_id":"","url":"https://api.github.com/users/everypoliticianbot","html_url":"https://github.com/everypoliticianbot","followers_url":"https://api.github.com/users/everypoliticianbot/followers","following_url":"https://api.github.com/users/everypoliticianbot/following{/other_user}","gists_url":"https://api.github.com/users/everypoliticianbot/gists{/gist_id}","starred_url":"https://api.github.com/users/everypoliticianbot/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/everypoliticianbot/subscriptions","organizations_url":"https://api.github.com/users/everypoliticianbot/orgs","repos_url":"https://api.github.com/users/everypoliticianbot/repos","events_url":"https://api.github.com/users/everypoliticianbot/events{/privacy}","received_events_url":"https://api.github.com/users/everypoliticianbot/received_events","type":"User","site_admin":false},"parents":[{"sha":"5626bbf15069eae43b71d13b86f9483134f477dd","url":"https://api.github.com/repos/chrismytton/everypolitician-data/commits/5626bbf15069eae43b71d13b86f9483134f477dd","html_url":"https://github.com/chrismytton/everypolitician-data/commit/5626bbf15069eae43b71d13b86f9483134f477dd"}]},{"sha":"ae558b802e5a4fc9180301d811f88bdfed703655","commit":{"author":{"name":"everypoliticianbot","email":"chrism+everypoliticianbot@mysociety.org","date":"2016-01-19T14:50:37Z"},"committer":{"name":"everypoliticianbot","email":"chrism+everypoliticianbot@mysociety.org","date":"2016-01-19T14:50:37Z"},"message":"Refresh
+        countries.json","tree":{"sha":"5cabd090bbbebc032ed4135bdea5ee56ebcf674f","url":"https://api.github.com/repos/chrismytton/everypolitician-data/git/trees/5cabd090bbbebc032ed4135bdea5ee56ebcf674f"},"url":"https://api.github.com/repos/chrismytton/everypolitician-data/git/commits/ae558b802e5a4fc9180301d811f88bdfed703655","comment_count":0},"url":"https://api.github.com/repos/chrismytton/everypolitician-data/commits/ae558b802e5a4fc9180301d811f88bdfed703655","html_url":"https://github.com/chrismytton/everypolitician-data/commit/ae558b802e5a4fc9180301d811f88bdfed703655","comments_url":"https://api.github.com/repos/chrismytton/everypolitician-data/commits/ae558b802e5a4fc9180301d811f88bdfed703655/comments","author":{"login":"everypoliticianbot","id":12693984,"avatar_url":"https://avatars.githubusercontent.com/u/12693984?v=3","gravatar_id":"","url":"https://api.github.com/users/everypoliticianbot","html_url":"https://github.com/everypoliticianbot","followers_url":"https://api.github.com/users/everypoliticianbot/followers","following_url":"https://api.github.com/users/everypoliticianbot/following{/other_user}","gists_url":"https://api.github.com/users/everypoliticianbot/gists{/gist_id}","starred_url":"https://api.github.com/users/everypoliticianbot/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/everypoliticianbot/subscriptions","organizations_url":"https://api.github.com/users/everypoliticianbot/orgs","repos_url":"https://api.github.com/users/everypoliticianbot/repos","events_url":"https://api.github.com/users/everypoliticianbot/events{/privacy}","received_events_url":"https://api.github.com/users/everypoliticianbot/received_events","type":"User","site_admin":false},"committer":{"login":"everypoliticianbot","id":12693984,"avatar_url":"https://avatars.githubusercontent.com/u/12693984?v=3","gravatar_id":"","url":"https://api.github.com/users/everypoliticianbot","html_url":"https://github.com/everypoliticianbot","followers_url":"https://api.github.com/users/everypoliticianbot/followers","following_url":"https://api.github.com/users/everypoliticianbot/following{/other_user}","gists_url":"https://api.github.com/users/everypoliticianbot/gists{/gist_id}","starred_url":"https://api.github.com/users/everypoliticianbot/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/everypoliticianbot/subscriptions","organizations_url":"https://api.github.com/users/everypoliticianbot/orgs","repos_url":"https://api.github.com/users/everypoliticianbot/repos","events_url":"https://api.github.com/users/everypoliticianbot/events{/privacy}","received_events_url":"https://api.github.com/users/everypoliticianbot/received_events","type":"User","site_admin":false},"parents":[{"sha":"3c3c7c1fc8a30735934a25fbf77876ceb5a35256","url":"https://api.github.com/repos/chrismytton/everypolitician-data/commits/3c3c7c1fc8a30735934a25fbf77876ceb5a35256","html_url":"https://github.com/chrismytton/everypolitician-data/commit/3c3c7c1fc8a30735934a25fbf77876ceb5a35256"}]}]'
+    http_version: 
+  recorded_at: Tue, 19 Jan 2016 16:48:32 GMT
+recorded_with: VCR 3.0.0

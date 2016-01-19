@@ -7,7 +7,10 @@ gem 'puma'
 gem 'octokit'
 gem 'dotenv'
 gem 'pry'
+gem 'rake'
 
 group :test do
   gem 'minitest'
+  gem 'vcr'
+  gem 'webmock'
 end
