@@ -64,9 +64,11 @@ class PullRequestPreview
   end
 
   def existing_pull
-    @existing_pull ||= github.pull_requests(viewer_sinatra_repo).find do |pull|
-      pull.head.ref == branch_name
-    end
+    @existing_pull ||= github.pull_requests(
+      viewer_sinatra_repo,
+      head: [viewer_sinatra_repo.split('/').first, branch_name].join(':'),
+      state: :all
+    ).first
   end
 
   def existing_pull?
