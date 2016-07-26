@@ -85,21 +85,21 @@ class ViewerSinatra
     ].join("\n")
   end
 
-  def existing_pull
-    @existing_pull ||= github.pull_requests(
+  def existing_pull_request
+    @existing_pull_request ||= github.pull_requests(
       viewer_sinatra_repo,
       head: [viewer_sinatra_repo.split('/').first, branch_name].join(':'),
       state: :all
     ).first
   end
 
-  def existing_pull?
-    !existing_pull.nil?
+  def existing_pull_request?
+    !existing_pull_request.nil?
   end
 
   def create_pull_request
-    if existing_pull?
-      existing_pull
+    if existing_pull_request?
+      existing_pull_request
     else
       github.create_pull_request(
         viewer_sinatra_repo,
