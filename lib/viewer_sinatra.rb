@@ -28,8 +28,9 @@ class ViewerSinatra
   end
 
   def on_merged
+    return unless existing_pull_request?
+    viewer_sinatra_pull_request = existing_pull_request
     datasource = github.contents(viewer_sinatra_repo, path: 'DATASOURCE')
-    viewer_sinatra_pull_request = create_pull_request
     github.update_contents(
       viewer_sinatra_repo,
       'DATASOURCE',
@@ -51,7 +52,8 @@ class ViewerSinatra
   end
 
   def on_closed
-    viewer_sinatra_pull_request = create_pull_request
+    return unless existing_pull_request?
+    viewer_sinatra_pull_request = existing_pull_request
     message = 'The parallel Pull Request in everypolitician-data was closed ' \
       'with unmerged commits.'
     github.add_comment(viewer_sinatra_repo, viewer_sinatra_pull_request.number, message)
