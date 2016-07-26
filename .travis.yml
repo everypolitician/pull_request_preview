@@ -1,0 +1,8 @@
+language: ruby
+cache: bundler
+rvm:
+  - 2.2.3
+# The VCR cassettes were recorded against these forks so that no live
+# data was touched.
+env:
+  - VIEWER_SINATRA_REPO=chrismytton/viewer-sinatra EVERYPOLITICIAN_DATA_REPO=chrismytton/everypolitician-data
