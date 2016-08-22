@@ -31,6 +31,11 @@ For more information, see the
 [bot blog on spinning up these preview sites](https://medium.com/@everypolitician/i-let-humans-peek-into-the-future-f4fe09eba59c).
 
 
+## Webhook
+
+This app expects to be triggered by a GitHub-style webhook from the
+EveryPolitician webhook manager: see
+[more about EveryPolitician webhooks](https://medium.com/@everypolitician/i-webhooks-pass-it-on-703e35e9ee93).
 
 ## Development
 
