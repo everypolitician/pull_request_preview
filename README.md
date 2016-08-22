@@ -1,28 +1,38 @@
 # Pull Request Preview
 
-Generates a pull request in 
-[`everypolitician/viewer-sinatra`](https://github.com/everypolitician/viewer-sinatra)
-if
+Run a [`everypolitician/viewer-sinatra`](https://github.com/everypolitician/viewer-sinatra)-based staging server for open [`everypolitician/everypolitician-data`](https://github.com/everypolitician/everypolitician-data) pull requests.
+
+* if
 [`countries.json`](https://github.com/everypolitician/everypolitician-data/blob/master/countries.json)
 has been updated in a pull request on 
-[`everypolitician/everypolitician-data`](https://github.com/everypolitician/everypolitician-data).
+[`everypolitician/everypolitician-data`](https://github.com/everypolitician/everypolitician-data), generate a pull request in 
+[`everypolitician/viewer-sinatra`](https://github.com/everypolitician/viewer-sinatra) 
+
+* if a pull request on `everypolitician/everypolitician-data` closes (perhaps it's been merged too), shut down the preview site associated with it.
+
+
+## Preview sites for data changes
+
+Effectively this app (`PullRequestPreview`) is passing activity on pull requests
+on the `everypolitician-data` repo onto `viewer-sinatra`. 
 
 This is useful because the `viewer-sinatra` GitHub repo is currently
 configured to generate a preview version of the
 [EveryPolitician website](http://everypolitician.org/) (on Heroku)
 whenever such a pull request is created.
 
-So this app (`PullRequestPreview`) is triggered whenever a data pull request
+So this app is triggered whenever a data pull request
 event occurs on `everypolitician/everypolitician-data`.
 
 If that pull request contains new (or updated) data, its `countries.json` file
 will have been updated to point at those data-changing commits. `PullRequestPreview` creates a pull request on `viewer-sinatra` by updating
  `viewer-sinatra`'s [`DATASOURCE`](https://github.com/everypolitician/viewer-sinatra/blob/master/DATASOURCE)
-file: it solely contains the URL to that specific version of `countries.json`. 
+file: that file solely contains the URL to that specific version of
+`countries.json`.
 
-Because `countries.json` contains URLs that themselves link to
-specific commits within that repo, each preview site is effectively previewing
-the data relevant to the changes which caused the original data pull request.
+Because `countries.json` itself contains URLs that link to specific commits
+within the data repo, each preview site is effectively previewing the data
+relevant to the changes which caused the original data pull request.
 
 Overall effect: a PR with new or updated data in `everypolitician-data` causes
 a preview site to be spun up via `viewer-sinatra`.
